@@ -87,6 +87,7 @@ export default function Register() {
             </form>
             {error && <p className="error">{error}</p>}
             {success && <p className="success">{success}</p>}
+            <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
     );
 }

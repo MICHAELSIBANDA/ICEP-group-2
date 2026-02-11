@@ -123,15 +123,30 @@ function AdminDashboard() {
           <p className="text-sm text-gray-600">No feedback.</p>
         ) : (
           <ul className="space-y-2 text-sm">
-            {feedbackList.map(f => (
-              <li key={f.id} className="border p-3 rounded">
-                <p>{f.message}</p>
-                <span className="text-xs text-gray-500">
-                  Student ID: {f.studentId}
-                </span>
-              </li>
-            ))}
-          </ul>
+  {feedbackList.map(f => (
+    <li
+      key={f.id}
+      className="border p-3 rounded bg-gray-50"
+    >
+      <p className="font-medium mb-1">
+        {f.message}
+      </p>
+
+      <p className="text-sm text-gray-700">
+        Rating: ⭐ {f.rating}/5
+      </p>
+
+      <p className="text-xs text-gray-500">
+        Student ID: {f.studentId}
+      </p>
+
+      <p className="text-xs text-gray-400">
+        {new Date(f.date).toLocaleDateString()}
+      </p>
+    </li>
+  ))}
+</ul>
+
         )}
       </div>
     </Layout>

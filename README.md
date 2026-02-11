@@ -13,6 +13,7 @@ CampusConnect is a React-based web application that centralises student support 
 - React
 - Tailwind CSS
 - Node.js
+- JSON
 
 ## Admin Credencials
 ```

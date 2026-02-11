@@ -8,6 +8,7 @@ const supportRoutes = require("./routes/supportRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const adminFeedbackRoutes = require("./routes/adminFeedbackRoutes");
 const adminSupportRoutes = require("./routes/adminSupportRoutes");
+const studentsRoutes = require("./routes/studentsRoutes");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/api/support", supportRoutes);
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/admin/feedback", adminFeedbackRoutes);
 app.use("/api/admin/support", adminSupportRoutes);
+app.use("/api/students", studentsRoutes);
 
 // Health check route
 app.get("/api/health", (req, res) => {

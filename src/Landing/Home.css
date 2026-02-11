@@ -1,0 +1,5 @@
+.lead {
+  font-size: 1.15rem;
+  color: var(--tut-gray-dark);
+  line-height: 1.6;
+}

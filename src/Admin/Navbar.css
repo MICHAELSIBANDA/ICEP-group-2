@@ -1,0 +1,62 @@
+/* Navbar.module.css */
+/* ===== TUT Brand Colors ===== */
+:root {
+  --tut-blue: #003087;
+  --tut-blue-light: #0050c8;
+  --tut-blue-dark: #001f5c;
+  --tut-red: #c8102e;
+  --tut-red-light: #e8354f;
+  --tut-red-dark: #9b0c23;
+  --tut-black: #111111;
+  --tut-white: #ffffff;
+  --tut-gray-light: #f4f6f9;
+  --tut-gray: #6b7280;
+  --tut-gray-dark: #374151;
+}
+
+/* ===== Navbar ===== */
+.navbarTut {
+  background-color: var(--tut-white);
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbarTut .navbarBrand {
+  color: var(--tut-black);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.navbarTut .navbarBrand span {
+  color: var(--tut-red);
+}
+
+.navbarToggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbarToggler:focus {
+  box-shadow: none;
+}
+
+.navbarTogglerIcon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navLink {
+  color: var(--tut-black);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: var(--tut-black);
+  background-color: rgba(0, 0, 0, 0.05);
+}

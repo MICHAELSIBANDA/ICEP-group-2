@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
 const adminMiddleware = require('../middleware/adminMiddleware');
-const { readData } = require('../utils/fileHandler');
+const { readData, writeData } = require('../utils/fileHandler');
 
 
 router.get('/', authMiddleware, adminMiddleware, (req, res) => {

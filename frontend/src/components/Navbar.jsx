@@ -49,17 +49,14 @@ function Navbar({ userRole }) {
           {userRole === "admin" && (
             <>
               <li>
-                <Link to="/admin-dashboard" className="hover:text-blue-600">
+                <Link to="/admin-dashboard" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+>
                   Admin Dashboard
                 </Link>
               </li>
               <li>
-                <Link to="/admin-requests" className="hover:text-blue-600">
-                  Requests
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin-announcements" className="hover:text-blue-600">
+                <Link to="/admin-announcements" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+>
                   Announcements
                 </Link>
               </li>

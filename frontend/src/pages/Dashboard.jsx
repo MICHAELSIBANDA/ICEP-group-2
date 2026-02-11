@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
+import { getUserFromToken } from "../utils/auth";
 
 function Dashboard() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
+  const user = getUserFromToken();
 
-    if (!storedToken) {
-      navigate("/login");
-      return;
-    }
+  if (!user) {
+    navigate("/login");
+    return;
+  }
 
-    setToken(storedToken);
-  }, [navigate]);
+  if (user.role !== "student") {
+    navigate("/admin/dashboard");
+    return;
+  }
+
+  setToken(localStorage.getItem("token"));
+}, [navigate]);
 
   return (
     <Layout>

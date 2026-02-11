@@ -12,7 +12,12 @@ function AdminDashboard() {
   useEffect(() => {
     const user = getUserFromToken();
 
-    if (!user || user.role !== "admin") {
+    if (!user) {
+    navigate("/login");
+    return;
+  }
+
+    if (user.role !== "admin") {
       navigate("/dashboard");
       return;
     }
@@ -20,7 +25,7 @@ function AdminDashboard() {
     fetchSupport();
     fetchFeedback();
     // eslint-disable-next-line
-  }, []);
+  }, [navigate]);
 
   const fetchSupport = async () => {
     const res = await fetch(

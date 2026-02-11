@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { getUserFromToken } from "../utils/auth";
 
 function Layout({ children }) {
@@ -25,9 +26,10 @@ function Layout({ children }) {
     <div className="min-h-screen bg-gray-100">
       <Navbar userRole={user.role} />
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="flex-grow max-w-7xl mx-auto px-6 py-8">
         {children}
       </main>
+      <Footer />
     </div>
   );
 }

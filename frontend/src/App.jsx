@@ -8,6 +8,7 @@ import Feedback from './pages/Feedback';
 import AdminDashboard from './pages/adminDashboard';
 import Announcements from './pages/Announcements';
 import AdminAnnouncements from './pages/adminAnnouncements';
+import AdminStudents from "./pages/adminStudents";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/announcements" element={<Announcements />} />
       <Route path="/admin-announcements" element={<AdminAnnouncements />} />
+      <Route path="/admin-students" element={<AdminStudents />} />
+      
     </Routes>
   );
 }

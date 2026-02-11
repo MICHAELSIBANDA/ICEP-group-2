@@ -21,7 +21,7 @@ function Navbar({ userRole }) {
         </Link>
 
         {/* Menu */}
-        <ul className="flex gap-6 items-center">
+        <ul className="flex gap-6 items-center text-center text-gray-700">
 
           {userRole === "student" && (
             <>
@@ -60,6 +60,12 @@ function Navbar({ userRole }) {
                   Announcements
                 </Link>
               </li>
+              <li>
+                <Link to="/admin-students" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+>
+                  Student Profiles
+                </Link>
+              </li>
             </>
           )}
 
@@ -79,3 +85,4 @@ function Navbar({ userRole }) {
 }
 
 export default Navbar;
+

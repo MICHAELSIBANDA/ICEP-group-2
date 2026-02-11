@@ -12,5 +12,12 @@
     "studentName": "Tshiamo",
     "role": "student",
     "password": "$2b$10$jNY07T89VnxvQ8Gu7rccD.GgskOgRtCg7RUy6S/b5WPxCozMRkgUC"
+  },
+  {
+    "id": 1770832628114,
+    "studentNumber": "234567891",
+    "studentName": "PenTeaYoungCar",
+    "role": "student",
+    "password": "$2b$10$UR0ipHSwITpKznJM/Rxrl.PselfCex9ZgA5fqD2yciK5pidXMHu9C"
   }
 ]

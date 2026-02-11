@@ -51,7 +51,6 @@ function Register() {
 
       setSuccess("Registration successful! Redirecting to login...");
 
-      // Redirect after short delay
       setTimeout(() => {
         navigate("/login");
       }, 1500);
@@ -92,7 +91,6 @@ function Register() {
               value={studentNumber}
               onChange={(e) => setStudentNumber(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="e.g. 223456789"
             />
           </div>
 
@@ -105,7 +103,6 @@ function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Your full name"
             />
           </div>
 
@@ -118,7 +115,6 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Create a password"
             />
           </div>
 
@@ -131,7 +127,6 @@ function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Re-enter password"
             />
           </div>
 

@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1770810633706,
+    "studentNumber": "224256108",
+    "studentName": "Farai",
+    "role": "student",
+    "password": "$2b$10$TG91Th88GfrQYwqqMWBLkO9esuncODPthm4ieVjcRmMbQl2ljcStC"
+  }
+]

@@ -1,4 +1,4 @@
-const bycrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { readData, writeData } = require('../utils/fileHandler');
 
@@ -21,14 +21,16 @@ exports.registerStudent = async (req, res) => {
         }
 
         //hash password
-        const hashedPassword = await bycrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         //create new student object
         const newStudent = {
+            id: Date.now(),          // unique ID
             studentNumber,
             studentName,
+            role: "student",         // default role
             password: hashedPassword
-        };
+};
 
         //add new student to students array
         students.push(newStudent);
@@ -56,7 +58,7 @@ exports.loginStudent = async (req, res) => {
         }
 
         //compare provided password with stored hashed password
-        const isPasswordValid = await bycrypt.compare(
+        const isPasswordValid = await bcrypt.compare(
             password, 
             student.password
         );
@@ -68,9 +70,11 @@ exports.loginStudent = async (req, res) => {
         //generate JWT token
         const token = jwt.sign(
             {
-                studentId: student.id,
+                id: student.id,
                 studentNumber: student.studentNumber,
-                studentName: student.studentName
+                studentName: student.studentName,
+                role: student.role
+
             },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }

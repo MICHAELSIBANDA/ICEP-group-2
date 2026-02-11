@@ -56,7 +56,10 @@ function Home() {
       <section className="bg-white py-12 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="p-6 border rounded-xl shadow-sm text-center">
+          <div className="p-6 border rounded-xl shadow-sm text-center
+                    transition transform hover:-translate-y-2
+                    hover:bg-gray-100 hover:shadow-lg cursor-pointer">
+                      
             <h3 className="text-xl font-semibold mb-2">
               Academic Support
             </h3>
@@ -65,7 +68,10 @@ function Home() {
             </p>
           </div>
 
-          <div className="p-6 border rounded-xl shadow-sm text-center">
+          <div className="p-6 border rounded-xl shadow-sm text-center
+                    transition transform hover:-translate-y-2
+                    hover:bg-gray-100 hover:shadow-lg cursor-pointer">
+
             <h3 className="text-xl font-semibold mb-2">
               Campus Announcements
             </h3>
@@ -74,7 +80,10 @@ function Home() {
             </p>
           </div>
 
-          <div className="p-6 border rounded-xl shadow-sm text-center">
+          <div className="p-6 border rounded-xl shadow-sm text-center
+                    transition transform hover:-translate-y-2
+                    hover:bg-gray-100 hover:shadow-lg cursor-pointer">
+                      
             <h3 className="text-xl font-semibold mb-2">
               Feedback System
             </h3>

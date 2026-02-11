@@ -42,7 +42,14 @@ const handleSubmit = async (e) => {
     localStorage.setItem("token", data.token);
 
     // Redirect to dashboard
-    navigate("/dashboard");
+    // Decode token to check role
+    const payload = JSON.parse(atob(data.token.split(".")[1]));
+
+    if (payload.role === "admin") {
+      navigate("/admin-dashboard");
+    } else {
+      navigate("/dashboard");
+    }
 
   } catch (error) {
     setError("Unable to connect to the server");
@@ -108,7 +115,9 @@ const handleSubmit = async (e) => {
         </p>
 
       </div>
+      
     </div>
+    
   );
 }
 

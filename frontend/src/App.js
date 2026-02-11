@@ -2,9 +2,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './pages/student/dashboard';
-import AnnouncementsEvents from './pages/announcements-events';
-import RequestSupport from './pages/request-support';
-import ServiceStatus from "./pages/service-status";
+import AnnouncementsEvents from './pages/student/announcements-events';
+import RequestSupport from './pages/student/request-support';
+import ServiceStatus from "./pages/student/service-status";
 import Login from "./pages/login";
 import Register from "./pages/register";
 

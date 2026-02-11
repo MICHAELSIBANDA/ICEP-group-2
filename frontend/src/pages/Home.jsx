@@ -83,7 +83,7 @@ function Home() {
           <div className="p-6 border rounded-xl shadow-sm text-center
                     transition transform hover:-translate-y-2
                     hover:bg-gray-100 hover:shadow-lg cursor-pointer">
-                      
+                      c
             <h3 className="text-xl font-semibold mb-2">
               Feedback System
             </h3>

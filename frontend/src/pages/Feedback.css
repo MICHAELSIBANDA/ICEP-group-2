@@ -1,0 +1,45 @@
+.feedback-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.feedback-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.feedback-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.feedback-container button {
+  padding: 12px 25px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  transition: 0.3s;
+}
+
+.feedback-container button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-container p.success {
+  color: green;
+  font-weight: bold;
+}

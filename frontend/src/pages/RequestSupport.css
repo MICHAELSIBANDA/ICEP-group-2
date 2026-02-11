@@ -1,0 +1,59 @@
+.request-support-container {
+  max-width: 500px; /* smaller width so it looks neat */
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.request-support-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form container: flex column so inputs stack nicely */
+.request-support-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* inputs fill container width */
+  gap: 15px; /* space between inputs */
+}
+
+/* Inputs and textarea */
+.request-support-container input,
+.request-support-container textarea {
+  width: 100%;
+  max-width: 100%; /* prevent over-stretching */
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box; /* ensure padding doesn't break width */
+  resize: vertical; /* allow only vertical resizing for textarea */
+}
+
+/* Button */
+.request-support-container button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  transition: 0.3s;
+}
+
+.request-support-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Success message */
+.request-support-container p.success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

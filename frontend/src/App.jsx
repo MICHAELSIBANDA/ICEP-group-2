@@ -8,6 +8,7 @@ import Feedback from './pages/Feedback';
 import AdminDashboard from './pages/adminDashboard';
 import Announcements from './pages/Announcements';
 import AdminAnnouncements from './pages/adminAnnouncements';
+import AdminReport from './pages/adminReport';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/announcements" element={<Announcements />} />
+      <Route path="/admin-report" element={<AdminReport />} />
       <Route path="/admin-announcements" element={<AdminAnnouncements />} />
     </Routes>
   );

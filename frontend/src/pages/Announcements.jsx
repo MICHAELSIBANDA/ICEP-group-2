@@ -26,7 +26,7 @@ function Announcements() {
   return (
     <Layout>
       <h2 className="text-xl font-semibold mb-6">
-        Announcements
+        Announcements & Events
       </h2>
 
       {announcements.length === 0 ? (

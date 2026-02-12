@@ -39,8 +39,8 @@ function AdminAnnouncements() {
 
   return (
     <Layout>
-      <h2 className="text-xl font-semibold mb-6">
-        Post Announcement
+      <h2 className="text-2xl font-bold text-blue-600 mb-6">
+        Post Announcement or Event
       </h2>
 
       {error && <p className="text-red-600 mb-3">{error}</p>}

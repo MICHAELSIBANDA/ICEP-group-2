@@ -22,5 +22,13 @@
     "description": "My PC is not working",
     "status": "In Progress",
     "createdAt": "2026-02-11T15:24:47.659Z"
+  },
+  {
+    "id": 1770832663582,
+    "studentId": 1770832628114,
+    "type": "Financial",
+    "description": "I owe R250 000.",
+    "status": "Resolved",
+    "createdAt": "2026-02-11T17:57:43.582Z"
   }
 ]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1770831647983,
+    "studentId": 1770810633706,
+    "message": "thank for your assistance",
+    "rating": "5",
+    "date": "2026-02-11T17:40:47.983Z"
+  },
+  {
+    "id": 1770831939816,
+    "studentId": 1770815756851,
+    "message": "Did not receive support\n",
+    "rating": "1",
+    "date": "2026-02-11T17:45:39.816Z"
+  },
+  {
+    "id": 1770841097639,
+    "studentId": 1770841028882,
+    "message": "I like it",
+    "rating": 3,
+    "date": "2026-02-11T20:18:17.639Z"
+  }
+]

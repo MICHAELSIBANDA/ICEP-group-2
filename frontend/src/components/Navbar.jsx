@@ -13,15 +13,10 @@ function Navbar({ userRole }) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Brand */}
-        <Link
-          to="/dashboard"
-          className="text-2xl font-bold text-blue-600"
-        >
-          CampusConnect
-        </Link>
+        <p className="text-2xl font-bold text-blue-600">CampusConnect</p>
 
         {/* Menu */}
-        <ul className="flex gap-6 items-center text-center text-gray-700">
+        <ul className="flex gap-6 items-center text-center items-center text-gray-700 text-sm font-medium tracking-wide">
 
           {userRole === "student" && (
             <>
@@ -29,6 +24,12 @@ function Navbar({ userRole }) {
                 <Link to="/dashboard" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
 >
                   Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link to="/announcements" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+>
+                  Announcements
                 </Link>
               </li>
               <li>
@@ -64,6 +65,12 @@ function Navbar({ userRole }) {
                 <Link to="/admin-students" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
 >
                   Student Profiles
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin-report" className="relative text-gray-700 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+>
+                  Reports
                 </Link>
               </li>
             </>

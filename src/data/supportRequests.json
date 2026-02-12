@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1770815192289,
+    "studentId": 1770810633706,
+    "type": "Financial",
+    "description": "no money",
+    "status": "Resolved",
+    "createdAt": "2026-02-11T13:06:32.289Z"
+  },
+  {
+    "id": 1770815267776,
+    "studentId": 1770810633706,
+    "type": "Academic",
+    "description": "we are failing\n",
+    "status": "Pending",
+    "createdAt": "2026-02-11T13:07:47.776Z"
+  },
+  {
+    "id": 1770823487659,
+    "studentId": 1770815756851,
+    "type": "IT Support",
+    "description": "My PC is not working",
+    "status": "In Progress",
+    "createdAt": "2026-02-11T15:24:47.659Z"
+  },
+  {
+    "id": 1770841087268,
+    "studentId": 1770841028882,
+    "type": "IT Support",
+    "description": "this is not now ",
+    "status": "Pending",
+    "createdAt": "2026-02-11T20:18:07.268Z"
+  },
+  {
+    "id": 1770841119744,
+    "studentId": 1770841028882,
+    "type": "Financial",
+    "description": "I need money",
+    "status": "Pending",
+    "createdAt": "2026-02-11T20:18:39.744Z"
+  }
+]

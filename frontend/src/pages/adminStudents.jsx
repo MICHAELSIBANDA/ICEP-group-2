@@ -107,7 +107,9 @@ function AdminStudents() {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-6 py-6">
-        <h1 className="text-3xl font-bold mb-6">All Students</h1>
+        <h1 className="text-3xl font-bold text-blue-600 mb-6">
+          All Students
+        </h1>
 
         {/* Search */}
         <div className="mb-4 flex justify-between items-center">

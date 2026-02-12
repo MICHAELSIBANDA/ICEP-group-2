@@ -32,7 +32,7 @@ function Home() {
           <p className="text-gray-600 text-lg mb-8">
             A centralized digital platform that connects students with
             academic support services, campus announcements, and feedback
-            systems — all in one place.
+            systems - all in one place.
           </p>
 
           <div className="flex justify-center gap-4">
@@ -83,7 +83,7 @@ function Home() {
           <div className="p-6 border rounded-xl shadow-sm text-center
                     transition transform hover:-translate-y-2
                     hover:bg-gray-100 hover:shadow-lg cursor-pointer">
-                      c
+                      
             <h3 className="text-xl font-semibold mb-2">
               Feedback System
             </h3>

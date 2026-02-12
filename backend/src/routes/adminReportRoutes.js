@@ -9,7 +9,8 @@ router.get('/', authMiddleware, adminMiddleware, (req, res) => {
   const feedback = readData('feedback.json');
   const students = readData('students.json');
   const support = readData('supportRequests.json');
-  const users = readData('users.json');
+  const users = readData('students.json');
+  
 
   const totalAnnouncements = announcements.length;
   const totalFeedback = feedback.length;

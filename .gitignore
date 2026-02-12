@@ -1,0 +1,34 @@
+# ===== Node / React =====
+node_modules/
+frontend/node_modules/
+frontend/node_modules/.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Build output =====
+build/
+dist/
+
+# ===== Environment files =====
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.iml
+
+# ===== Logs =====
+logs
+*.log
+
+# ===== Coverage =====
+coverage/

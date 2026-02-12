@@ -35,7 +35,9 @@ function AdminReport() {
 
   return (
     <Layout>
-      <h2 className="text-xl font-semibold mb-6">Admin Report</h2>
+      <h2 className="text-2xl font-bold text-blue-600 mb-6">
+        Admin Report
+      </h2>
 
       {!report ? (
         <p>Loading report...</p>
@@ -48,6 +50,7 @@ function AdminReport() {
               <li>Total Feedback: {report.totalFeedback}</li>
               <li>Total Students: {report.totalStudents}</li>
               <li>Total Support Requests: {report.totalSupport}</li>
+              <li>Total Users: {report.totalUsers}</li>
             </ul>
           </div>
 

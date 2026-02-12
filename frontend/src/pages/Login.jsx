@@ -41,8 +41,8 @@ const handleSubmit = async (e) => {
     // Save JWT token
     localStorage.setItem("token", data.token);
 
-    // Redirect to dashboard
-    // Decode token to check role
+    // Decode token to check role & then Redirect to dashboard
+ 
     const payload = JSON.parse(atob(data.token.split(".")[1]));
 
     if (payload.role === "admin") {

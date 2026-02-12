@@ -22,6 +22,7 @@ function App() {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/announcements" element={<Announcements />} />
+      <Route path="/admin-report" element={<AdminReport />} />
       <Route path="/admin-announcements" element={<AdminAnnouncements />} />
       <Route path="/admin-students" element={<AdminStudents />} />
       <Route path="/admin-report" element={<AdminReport />} />

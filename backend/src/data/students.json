@@ -19,5 +19,12 @@
     "studentName": "PenTeaYoungCar",
     "role": "student",
     "password": "$2b$10$UR0ipHSwITpKznJM/Rxrl.PselfCex9ZgA5fqD2yciK5pidXMHu9C"
+  },
+  {
+    "id": 1770902045540,
+    "studentNumber": "2347686909",
+    "studentName": "Njabulo",
+    "role": "student",
+    "password": "$2b$10$2q61mxjaByu//dJQsR4Kn.cPVA1RrfQOUaUm2/GNRxekRD.ePVLEi"
   }
 ]

@@ -30,5 +30,13 @@
     "description": "I owe R250 000.",
     "status": "Resolved",
     "createdAt": "2026-02-11T17:57:43.582Z"
+  },
+  {
+    "id": 1770902161953,
+    "studentId": 1770902045540,
+    "type": "IT Support",
+    "description": "I am having issues with my pc in  lab 10-120 soshanguve south campus",
+    "status": "Resolved",
+    "createdAt": "2026-02-12T13:16:01.953Z"
   }
 ]

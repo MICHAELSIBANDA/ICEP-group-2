@@ -29,7 +29,7 @@ function AdminDashboard() {
 
   const fetchSupport = async () => {
     const res = await fetch(
-      "http://localhost:3001/api/admin/support",
+      `${import.meta.env.VITE_API_URL}/api/support`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -42,7 +42,7 @@ function AdminDashboard() {
 
   const fetchFeedback = async () => {
     const res = await fetch(
-      "http://localhost:3001/api/admin/feedback",
+      `${import.meta.env.VITE_API_URL}/api/feedback`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -54,7 +54,7 @@ function AdminDashboard() {
   };
 
   const updateStatus = async (id, status) => {
-    await fetch(`http://localhost:3001/api/admin/support/${id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/admin/support/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

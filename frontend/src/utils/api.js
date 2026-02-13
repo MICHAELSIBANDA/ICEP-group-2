@@ -1,29 +1,32 @@
-const BASE_URL = "http://localhost:3001";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 
+const authHeaders = () => ({
+  Authorization: `Bearer ${localStorage.getItem("token")}`,
+  "Content-Type": "application/json"
+});
+
+// Get all students (ADMIN)
 export const getAllStudents = async () => {
-  const token = localStorage.getItem("token");
-  const res = await fetch(`${BASE_URL}/api/students`, {
-    headers: { Authorization: `Bearer ${token}` },
+  const res = await fetch(`${API_BASE}/students`, {
+    headers: authHeaders()
   });
   return res.json();
 };
 
-export const deleteStudent = async (studentId) => {
-  const token = localStorage.getItem("token");
-  return fetch(`${BASE_URL}/api/students/${studentId}`, {
+// Delete student (ADMIN)
+export const deleteStudent = async (id) => {
+  return fetch(`${API_BASE}/students/${id}`, {
     method: "DELETE",
-    headers: { Authorization: `Bearer ${token}` },
+    headers: authHeaders()
   });
 };
 
+// Restore student (ADMIN)
 export const restoreStudent = async (student) => {
-  const token = localStorage.getItem("token");
-  return fetch(`${BASE_URL}/api/students/restore/${student.id}`, {
+  return fetch(`${API_BASE}/students/restore`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify(student),
+    headers: authHeaders(),
+    body: JSON.stringify(student)
   });
 };
+

@@ -13,7 +13,7 @@ function AdminStudents() {
   const [deletedStudent, setDeletedStudent] = useState(null);
   const navigate = useNavigate();
 
-  // Fetch students
+  //  Auth check + fetch
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) return navigate("/login");
@@ -26,173 +26,127 @@ function AdminStudents() {
       setStudents(data);
       setFilteredStudents(data);
     };
+
     fetchStudents();
   }, [navigate]);
 
-  // Search filter
+  //  Search
   useEffect(() => {
-    const lowerSearch = search.toLowerCase();
-    const filtered = students.filter(
-      (s) =>
-        s.studentName.toLowerCase().includes(lowerSearch) ||
-        s.studentNumber.toLowerCase().includes(lowerSearch)
+    const lower = search.toLowerCase();
+    setFilteredStudents(
+      students.filter(
+        s =>
+          s.studentName.toLowerCase().includes(lower) ||
+          s.studentNumber.toLowerCase().includes(lower)
+      )
     );
-    setFilteredStudents(filtered);
   }, [search, students]);
 
-  // Sorting
+  // Sort
   const handleSort = (key) => {
-    let direction = "asc";
-    if (sortConfig.key === key && sortConfig.direction === "asc") direction = "desc";
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
 
-    const sorted = [...filteredStudents].sort((a, b) => {
-      if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
-      if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
-      return 0;
-    });
+    const sorted = [...filteredStudents].sort((a, b) =>
+      a[key] < b[key] ? (direction === "asc" ? -1 : 1) :
+      a[key] > b[key] ? (direction === "asc" ? 1 : -1) : 0
+    );
 
     setFilteredStudents(sorted);
     setSortConfig({ key, direction });
   };
 
-  // Show toast with optional undo
+  // Toast
   const showToast = (message, type = "success", undoId = null) => {
     setToast({ message, visible: true, type, undoId });
     setTimeout(() => setToast({ message: "", visible: false, type, undoId: null }), 5000);
   };
 
-  // Delete student
-  const handleDelete = async (studentId) => {
-    const student = students.find((s) => s.id === studentId);
-    if (!student) return;
+  // Delete
+  const handleDelete = async (id) => {
+    const student = students.find(s => s.id === id);
+    if (!student || !window.confirm(`Delete ${student.studentName}?`)) return;
 
-    if (!window.confirm(`Delete ${student.studentName}?`)) return;
+    setDeletedStudent(student);
+    setStudents(students.filter(s => s.id !== id));
+    setFilteredStudents(filteredStudents.filter(s => s.id !== id));
 
-    // Save full student (including password) for undo
-    setDeletedStudent(student); // <-- Make sure this includes student.password!
+    showToast(`Deleted ${student.studentName}`, "success", id);
 
-    // Remove from state for UI
-    setStudents(students.filter((s) => s.id !== studentId));
-    setFilteredStudents(filteredStudents.filter((s) => s.id !== studentId));
-
-    showToast(`Deleted ${student.studentName}`, "success", studentId);
-
-    const response = await deleteStudent(studentId);
-    if (!response.ok) {
-      // If delete failed, restore immediately
-      setStudents((prev) => [...prev, student]);
-      setFilteredStudents((prev) => [...prev, student]);
-      showToast(`Failed to delete ${student.studentName}`, "error");
-      setDeletedStudent(null);
+    const res = await deleteStudent(id);
+    if (!res.ok) {
+      setStudents(prev => [...prev, student]);
+      setFilteredStudents(prev => [...prev, student]);
+      showToast("Delete failed", "error");
     }
   };
 
-
-  // Undo deletion
+  // Undo
   const handleUndo = async () => {
     if (!deletedStudent) return;
 
-    // Restore full student
-    setStudents((prev) => [...prev, deletedStudent]);
-    setFilteredStudents((prev) => [...prev, deletedStudent]);
+    setStudents(prev => [...prev, deletedStudent]);
+    setFilteredStudents(prev => [...prev, deletedStudent]);
 
-    // Send full student object (including password) to backend
     await restoreStudent(deletedStudent);
-
     setDeletedStudent(null);
-    setToast({ message: "", visible: false, type: "success", undoId: null });
+    setToast({ message: "", visible: false });
   };
-
 
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-6 py-6">
-        <h1 className="text-3xl font-bold text-blue-600 mb-6">
-          All Students
-        </h1>
+        <h1 className="text-3xl font-bold text-blue-600 mb-6">All Students</h1>
 
-        {/* Search */}
-        <div className="mb-4 flex justify-between items-center">
-          <input
-            type="text"
-            placeholder="Search by name or student number..."
-            className="border px-4 py-2 rounded w-80"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+        <input
+          className="border px-4 py-2 rounded w-80 mb-4"
+          placeholder="Search..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
 
-        {/* Table */}
-        <div className="overflow-x-auto bg-white shadow rounded-lg">
-          <table className="min-w-full border border-gray-200">
+        <div className="bg-white shadow rounded-lg overflow-x-auto">
+          <table className="min-w-full border">
             <thead className="bg-gray-100">
               <tr>
-                <th
-                  className="text-left px-4 py-3 border cursor-pointer"
-                  onClick={() => handleSort("studentName")}
-                >
-                  Name {sortConfig.key === "studentName" ? (sortConfig.direction === "asc" ? "▲" : "▼") : ""}
-                </th>
-                <th
-                  className="text-left px-4 py-3 border cursor-pointer"
-                  onClick={() => handleSort("studentNumber")}
-                >
-                  Student Number {sortConfig.key === "studentNumber" ? (sortConfig.direction === "asc" ? "▲" : "▼") : ""}
-                </th>
-                <th className="text-left px-4 py-3 border">Role</th>
-                <th className="text-left px-4 py-3 border">Actions</th>
+                <th onClick={() => handleSort("studentName")} className="cursor-pointer p-3 border">Name</th>
+                <th onClick={() => handleSort("studentNumber")} className="cursor-pointer p-3 border">Student Number</th>
+                <th className="p-3 border">Role</th>
+                <th className="p-3 border">Actions</th>
               </tr>
             </thead>
-
             <tbody>
-              {filteredStudents.length === 0 ? (
-                <tr>
-                  <td className="px-4 py-3 border" colSpan="4">
-                    No students found.
+              {filteredStudents.map(s => (
+                <tr key={s.id} className="hover:bg-gray-50">
+                  <td className="p-3 border">{s.studentName}</td>
+                  <td className="p-3 border">{s.studentNumber}</td>
+                  <td className="p-3 border">{s.role}</td>
+                  <td className="p-3 border">
+                    <button
+                      onClick={() => handleDelete(s.id)}
+                      className="bg-red-500 text-white px-3 py-1 rounded"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
-              ) : (
-                filteredStudents.map((student) => (
-                  <tr key={student.id} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 border">{student.studentName}</td>
-                    <td className="px-4 py-3 border">{student.studentNumber}</td>
-                    <td className="px-4 py-3 border">{student.role}</td>
-                    <td className="px-4 py-3 border flex gap-2">
-                      <button
-                        onClick={() => handleDelete(student.id)}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              )}
+              ))}
             </tbody>
           </table>
         </div>
 
-        {/* Toast */}
-        <div className="fixed top-4 right-4 z-50">
-          {toast.visible && (
-            <div
-              className={`transform transition-transform duration-300 ${
-                toast.visible ? "translate-x-0" : "translate-x-20 opacity-0"
-              } ${toast.type === "success" ? "bg-green-500" : "bg-red-500"} 
-              text-white px-4 py-2 rounded shadow-lg flex items-center justify-between gap-4`}
-            >
-              <span>{toast.message}</span>
-              {toast.undoId && (
-                <button onClick={handleUndo} className="underline text-white font-bold">
-                  Undo
-                </button>
-              )}
-            </div>
-          )}
-        </div>
+        {toast.visible && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow">
+            {toast.message}
+            {toast.undoId && (
+              <button onClick={handleUndo} className="underline ml-2">Undo</button>
+            )}
+          </div>
+        )}
       </div>
     </Layout>
   );
 }
 
 export default AdminStudents;
+

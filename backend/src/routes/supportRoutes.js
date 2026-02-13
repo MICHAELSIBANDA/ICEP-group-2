@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the auth middleware
-const authMiddleware = require('../middleware/authMiddleware');
+const authMiddleware = require('../middleware/authmiddleware');
 const {
     createSupportRequest,
     getMyRequests,

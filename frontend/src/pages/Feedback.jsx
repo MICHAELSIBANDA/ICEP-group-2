@@ -24,7 +24,7 @@ function Feedback() {
   const fetchMyFeedback = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3001/api/feedback",
+        `${import.meta.env.VITE_API_URL}/api/feedback`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -56,7 +56,7 @@ function Feedback() {
 
     try {
       const response = await fetch(
-        "http://localhost:3001/api/feedback",
+        `${import.meta.env.VITE_API_URL}/api/feedback`,
         {
           method: "POST",
           headers: {

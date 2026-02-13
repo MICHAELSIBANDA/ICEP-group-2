@@ -25,7 +25,7 @@ function Support() {
   const fetchMyRequests = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3001/api/support",
+        `${import.meta.env.VITE_API_URL}/api/support`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -52,7 +52,7 @@ function Support() {
 
     try {
       const response = await fetch(
-        "http://localhost:3001/api/support",
+        `${import.meta.env.VITE_API_URL}/api/support`,
         {
           method: "POST",
           headers: {

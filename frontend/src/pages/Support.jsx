@@ -25,7 +25,7 @@ function Support() {
   const fetchMyRequests = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/support`,
+        `${process.env.REACT_APP_API_URL}/api/support`,
         {
           headers: {
             Authorization: `Bearer ${token}`

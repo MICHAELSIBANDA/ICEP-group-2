@@ -29,7 +29,7 @@ function AdminDashboard() {
 
   const fetchSupport = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/support`,
+      `${process.env.REACT_APP_API_URL}/api/support`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -42,7 +42,7 @@ function AdminDashboard() {
 
   const fetchFeedback = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/feedback`,
+      `${process.env.REACT_APP_API_URL}/api/feedback`,
       {
         headers: {
           Authorization: `Bearer ${token}`

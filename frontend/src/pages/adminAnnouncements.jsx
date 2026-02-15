@@ -14,7 +14,7 @@ function AdminAnnouncements() {
     setSuccess("");
 
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/auth/announcements`,
+      `${process.env.REACT_APP_API_URL}/api/auth/announcements`,
       {
         method: "POST",
         headers: {

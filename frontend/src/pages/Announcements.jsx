@@ -6,7 +6,7 @@ function Announcements() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/announcements`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/announcements`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

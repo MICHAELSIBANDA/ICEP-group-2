@@ -28,8 +28,7 @@ function AdminDashboard() {
   }, [navigate]);
 
   const fetchSupport = async () => {
-    const res = await fetch(
-      `https://icep-group-2.onrender.com/api/support`,
+    const res = await fetch(`https://icep-group-2.onrender.com/api/support`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -41,8 +40,7 @@ function AdminDashboard() {
   };
 
   const fetchFeedback = async () => {
-    const res = await fetch(
-      `https://icep-group-2.onrender.com/api/feedback`,
+    const res = await fetch(`https://icep-group-2.onrender.com/api/feedback`,
       {
         headers: {
           Authorization: `Bearer ${token}`

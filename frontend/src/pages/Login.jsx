@@ -123,7 +123,7 @@ return (
         <p className="text-center text-sm text-gray-800 mt-6">
           Don't have an account?{" "}
         </p>
-        <Link to="/register" className="text-blue-600 hover:underline">
+        <Link to="/register" className="text-blue-600 text-center hover:underline">
           Register here
         </Link>
       </div>

@@ -56,7 +56,7 @@ function Feedback() {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/feedback`,
+        `${import.meta.env.VITE_API_URL}/api/feedback`,
         {
           method: "POST",
           headers: {

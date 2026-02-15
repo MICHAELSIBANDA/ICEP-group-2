@@ -150,12 +150,14 @@ function Register() {
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-700 mt-6">
-        Already have an account?{" "}
-        <a href="/Login.jsx" className="text-blue-600 hover:underline">
-          Login here
-        </a>
-      </p>
+      <div>
+        <p className="text-center text-sm text-gray-700 mt-6">
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-600 hover:underline">
+            Login here
+          </Link>
+        </p>
+      </div>
 
     </div>
   </div>

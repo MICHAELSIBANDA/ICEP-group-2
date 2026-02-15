@@ -119,12 +119,14 @@ return (
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-800 mt-6">
-        Don't have an account?{" "}
-        <a href="/Register.jsx" className="text-blue-600 hover:underline">
-          Register here
-        </a>
-      </p>
+      <div>
+        <p className="text-center text-sm text-gray-800 mt-6">
+          Don't have an account?{" "}
+          <Link to="/register" className="text-blue-600 hover:underline">
+            Register here
+          </Link>
+        </p>
+      </div>
 
 
 

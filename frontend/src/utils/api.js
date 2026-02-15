@@ -1,4 +1,4 @@
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+const API_BASE = `https://icep-group-2-campusconnect.onrender.com/api`;
 
 const authHeaders = () => ({
   Authorization: `Bearer ${localStorage.getItem("token")}`,

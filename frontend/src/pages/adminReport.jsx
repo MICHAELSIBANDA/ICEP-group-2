@@ -26,7 +26,7 @@ function AdminReport() {
   }, [navigate]);
 
   const fetchReport = async () => {
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/report`, {
+    const res = await fetch(`https://icep-group-2.onrender.com/api/admin/report`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();

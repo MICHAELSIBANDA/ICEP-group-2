@@ -14,7 +14,10 @@ const studentsRoutes = require("./routes/studentsRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://icep-group-2-campusconnect.onrender.com",
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes

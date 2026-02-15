@@ -83,9 +83,11 @@ function Dashboard() {
       </div>
 
       {/* Debug Token (optional, remove later) */}
+      {/*
       <div className="mt-8 text-xs text-gray-500 break-all">
         <strong>JWT Token:</strong> {token}
       </div>
+      */}
     </Layout>
   );
 }

@@ -25,7 +25,7 @@ function Support() {
   const fetchMyRequests = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/support`,
+        `https://icep-group-2.onrender.com/api/support`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -52,7 +52,7 @@ function Support() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/support`,
+        `https://icep-group-2.onrender.com/api/support`,
         {
           method: "POST",
           headers: {

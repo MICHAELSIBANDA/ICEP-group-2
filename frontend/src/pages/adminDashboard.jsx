@@ -28,8 +28,7 @@ function AdminDashboard() {
   }, [navigate]);
 
   const fetchSupport = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/support`,
+    const res = await fetch(`https://icep-group-2.onrender.com/api/admin/support`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -41,8 +40,7 @@ function AdminDashboard() {
   };
 
   const fetchFeedback = async () => {
-    const res = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/feedback`,
+    const res = await fetch(`https://icep-group-2.onrender.com/api/admin/feedback`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -54,7 +52,7 @@ function AdminDashboard() {
   };
 
   const updateStatus = async (id, status) => {
-    await fetch(`${import.meta.env.VITE_API_URL}/api/admin/support/${id}`, {
+    await fetch(`https://icep-group-2.onrender.com/api/admin/support/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 function Register() {
   const [studentNumber, setStudentNumber] = useState("");
@@ -28,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/auth/register`,
+        `https://icep-group-2.onrender.com/api/auth/register`,
         {
           method: "POST",
           headers: {
@@ -150,12 +151,14 @@ function Register() {
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-700 mt-6">
-        Already have an account?{" "}
-        <a href="/login" className="text-blue-700 hover:underline">
+      <div>
+        <p className="text-center text-sm text-gray-700 mt-6">
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-600 hover:underline">
           Login here
-        </a>
-      </p>
+        </Link>
+        </p>
+      </div>
 
     </div>
   </div>

@@ -6,7 +6,7 @@ function Announcements() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/announcements`, {
+    fetch(`https://icep-group-2.onrender.com/api/announcements`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

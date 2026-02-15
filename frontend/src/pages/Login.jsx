@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const [studentNumber, setStudentNumber] = useState("");
@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/auth/login`,
+      `https://icep-group-2.onrender.com/api/auth/login`,
       {
         method: "POST",
         headers: {
@@ -119,12 +119,14 @@ return (
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-800 mt-6">
-        Don't have an account?{" "}
-        <a href="/register" className="text-blue-700 hover:underline">
-          Register here
-        </a>
-      </p>
+      <div>
+        <p className="text-center text-sm text-gray-800 mt-6">
+          Don't have an account?{" "}
+          <Link to="/register" className="text-blue-600 hover:underline">
+            Register here
+          </Link>
+        </p>
+      </div>
 
 
 

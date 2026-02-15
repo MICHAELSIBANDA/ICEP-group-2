@@ -7,7 +7,7 @@ const authHeaders = () => ({
 
 // Get all students (ADMIN)
 export const getAllStudents = async () => {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/students`, {
+  const res = await fetch(`${API_BASE}/students`, {
     headers: authHeaders()
   });
   return res.json();
@@ -15,7 +15,7 @@ export const getAllStudents = async () => {
 
 // Delete student (ADMIN)
 export const deleteStudent = async (id) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/api/students/${id}`, {
+  return fetch(`${API_BASE}/api/students/${id}`, {
     method: "DELETE",
     headers: authHeaders()
   });
@@ -23,7 +23,7 @@ export const deleteStudent = async (id) => {
 
 // Restore student (ADMIN)
 export const restoreStudent = async (student) => {
-  return fetch(`${process.env.REACT_APP_API_URL}/api/students/restore`, {
+  return fetch(`${API_BASE}/api/students/restore`, {
     method: "POST",
     headers: authHeaders(),
     body: JSON.stringify(student)

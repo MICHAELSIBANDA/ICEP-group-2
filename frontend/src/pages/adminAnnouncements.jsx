@@ -14,7 +14,7 @@ function AdminAnnouncements() {
     setSuccess("");
 
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/auth/announcements`,
+      `https://icep-group-2.onrender.com/api/auth/announcements`,
       {
         method: "POST",
         headers: {

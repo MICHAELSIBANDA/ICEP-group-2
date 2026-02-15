@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/auth/login`,
+      `https://icep-group-2.onrender.com/api/auth/login`,
       {
         method: "POST",
         headers: {

@@ -2,6 +2,9 @@
 
 CampusConnect is a React-based web application that centralises student support services for a university.
 
+##Site Link
+https://icep-group-2-campusconnect.onrender.com
+
 ## Features
 - Student registration and authentication
 - Academic support requests
